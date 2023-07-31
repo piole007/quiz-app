@@ -2,18 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import "./Questions.css";
 
-const Questions = ({ questions }) => {
+function Questions({ questions }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answerIdx, setAnswerIdx] = useState(null);
+  const [answerIdx, setAnswerIdx] = useState(Number);
   const [answer, setAnswer] = useState(null);
   const { question, choices, correctAnswer } = questions[currentQuestion];
 
-  // doesn't work right
   const onAnswerClick = (answer, index) => {
     setAnswerIdx(index);
-    console.log(index);
-    console.log(answerIdx);
     if (answer === correctAnswer) {
       setAnswer(true);
     } else {
@@ -42,9 +40,9 @@ const Questions = ({ questions }) => {
       <ul className="quiz-choices">
         {choices.map((answer, index) => (
           <li
+            key={index}
+            className={answerIdx === index ? "selected" : "unselected"}
             onClick={() => onAnswerClick(answer, index)}
-            key={answer}
-            className={answerIdx === index ? "selected-answer" : null}
           >
             {answer}
           </li>
@@ -52,7 +50,7 @@ const Questions = ({ questions }) => {
       </ul>
       <div>
         <Button
-          onClick={() => onClickNext}
+          onClick={() => onClickNext()}
           disabled={answerIdx === null}
           className=" text-uppercase"
           style={{
@@ -60,11 +58,11 @@ const Questions = ({ questions }) => {
             color: "var(--text-primary)",
           }}
         >
-          {currentQuestion === questions.length - 1 ? "Finish" : "next"}
+          {currentQuestion === questions.length - 1 ? "finish" : "next"}
         </Button>
       </div>
     </div>
   );
-};
+}
 
 export default Questions;

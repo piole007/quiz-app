@@ -13,45 +13,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* questions */
-
-.container {
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    width: 60vw;
-    border-radius: 6px;
-}
-
-.selected-answer {
-    background: var(--primary-color) ;
-    color: #ffffff;
-}
-
-.quiz-choices {
-    margin: 20px;
-    width: 60%;
-}
-.quiz-choices li {
-    text-decoration: none;
-    list-style: none;
-    color: var(--text-secondary);
-    padding: 6px;
-    margin: 10px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    width: 100%;
-    cursor: pointer;
-}
-
-.quiz-button {
-  display: flex;
-  justify-content: flex-end;
-}
