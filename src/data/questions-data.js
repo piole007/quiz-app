@@ -1,4 +1,4 @@
-export const quizData = [
+export const questionsData = [
   {
     topic: "CSS/HTML Code",
     questions: [
