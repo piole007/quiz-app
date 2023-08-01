@@ -1,0 +1,30 @@
+:root {
+    --body-bg: linear-gradient(90deg, #6a5ae2 0%, #ff893b 100%);
+    --container-bg: #e9e4fd;
+    --text-primary: #ffffff;
+    --primary-color: #6a5ae2;
+    --opacity-primary: #796ae3;
+    --secondary-color: #ff8fa3;
+    --opacity-secondary: #fea5b5;
+    --text-secondary: #0c0a2b;
+  }
+
+  .result-container{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--body-bg);
+  }
+
+  .result-card {
+    background: var(--container-bg);
+    height: 60vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+  }
