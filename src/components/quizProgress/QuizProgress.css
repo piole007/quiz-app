@@ -1,0 +1,26 @@
+.container-sm {
+  background: var(--opacity-primary);
+  color: var(--text-primary);
+  width: 60%;
+  margin: 20px;
+  border-radius: 6px;
+}
+
+.quiz-progress-title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-top: 10px;
+  opacity: 80%;
+  letter-spacing: .2rem;
+}
+
+
+
+.progress-box {
+  height: 40px;
+  text-align: center;
+  background: var(--secondary-color);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 10px;
+}

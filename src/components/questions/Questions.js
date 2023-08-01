@@ -3,8 +3,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Questions.css";
+import QuizProgress from "../quizProgress/QuizProgress";
 
-function Questions({ questions }) {
+function Questions({ questions, quizTitle }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answerIdx, setAnswerIdx] = useState(Number);
   const [answer, setAnswer] = useState(null);
@@ -29,34 +30,28 @@ function Questions({ questions }) {
   };
 
   return (
-    <div
-      className="container d-flex flex-column justify-content-center "
-      style={{ background: "var(--container-bg)" }}
-    >
-      <div className="quiz-progress">
-        {currentQuestion + 1}/{questions.length}
-      </div>
+    <div className="container d-flex flex-column justify-content-center align-items-center">
+      <QuizProgress questionsLength={questions.length} currentQuestion={currentQuestion} quizTitle={quizTitle} />
       <h2>{question}</h2>
-      <ul className="quiz-choices">
-        {choices.map((answer, index) => (
-          <li
-            key={index}
-            className={answerIdx === index ? "selected" : "unselected"}
-            onClick={() => onAnswerClick(answer, index)}
-          >
-            {answer}
-          </li>
-        ))}
-      </ul>
+      <div className="quiz-choices">
+        <ul>
+          {choices.map((answer, index) => (
+            <li
+              key={index}
+              className={answerIdx === index ? "selected" : "unselected"}
+              onClick={() => onAnswerClick(answer, index)}
+            >
+              {answer}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div>
         <Button
           onClick={() => onClickNext()}
           disabled={answerIdx === null}
-          className=" text-uppercase"
-          style={{
-            background: "var(--primary-color)",
-            color: "var(--text-primary)",
-          }}
+          className="quiz-button text-uppercase"
         >
           {currentQuestion === questions.length - 1 ? "finish" : "next"}
         </Button>

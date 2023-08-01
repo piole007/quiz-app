@@ -7,8 +7,12 @@ import { quizData } from "./data/questions-data";
 import "./App.css";
 
 function App() {
+  
+  const number = getRandomInt();
+
   function getRandomInt() {
-    return Math.floor(Math.random() * 5);
+    const number = Math.floor(Math.random() * 5)
+    return number
   }
 
   return (
@@ -16,7 +20,7 @@ function App() {
       className="d-flex justify-content-center align-items-center"
       style={{ background: "var(--body-bg)", height: "100vh", width: "100vw" }}
     >
-      <Questions questions={quizData[getRandomInt()].questions} />
+      <Questions questions={quizData[number].questions} quizTitle={quizData[number].topic} />
     </div>
   );
 }
