@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import { quizData } from "../data/quiz-data";
+import React, { useState, useMemo } from "react";
+import { quizCardData } from "../data/quiz-card-data";
 import QuizCard from "./QuizCard";
 import "../reusableComponents/Heading.css";
 
 const LandingPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredQuizzes = quizData.filter(
-    (quiz) =>
-      quiz.topic.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      quiz.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredQuizzes = useMemo(() => {
+    return quizCardData.filter(
+      (quiz) =>
+        quiz.topic.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        quiz.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm]);
 
   return (
     <div>
@@ -33,7 +35,7 @@ const LandingPage = () => {
         <div className="mt-4" />
         <div className="row">
           {filteredQuizzes.map((quiz) => (
-            <QuizCard key={quiz.type} quiz={quiz} />
+            <QuizCard key={quiz.topic} quiz={quiz} />
           ))}
         </div>
       </div>

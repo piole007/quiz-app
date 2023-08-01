@@ -1,14 +1,25 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Questions.css";
 
-function Questions({ questions }) {
+function Questions({ questions, topic }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answerIdx, setAnswerIdx] = useState(Number);
   const [answer, setAnswer] = useState(null);
-  const { question, choices, correctAnswer } = questions[currentQuestion];
+
+  if (!topic) {
+    return <div>Quiz topic not specified!</div>;
+  }
+  const selectedQuiz = questions.find(
+    (quiz) => quiz.topic.toLowerCase() === topic.toLowerCase()
+  );
+
+  if (!selectedQuiz) {
+    return <div>Quiz not found!</div>;
+  }
+
+  const { question, choices, correctAnswer } =
+    selectedQuiz.questions[currentQuestion];
 
   const onAnswerClick = (answer, index) => {
     setAnswerIdx(index);
@@ -21,8 +32,8 @@ function Questions({ questions }) {
 
   const onClickNext = () => {
     setAnswerIdx(null);
-    if (currentQuestion !== questions.length - 1) {
-      setCurrentQuestion((setCurrentQuestion) => setCurrentQuestion + 1);
+    if (currentQuestion !== selectedQuiz.questions.length - 1) {
+      setCurrentQuestion((currentQuestion) => currentQuestion + 1);
     } else {
       setCurrentQuestion(0);
     }
@@ -34,7 +45,7 @@ function Questions({ questions }) {
       style={{ background: "var(--container-bg)" }}
     >
       <div className="quiz-progress">
-        {currentQuestion + 1}/{questions.length}
+        {currentQuestion + 1}/{selectedQuiz.questions.length}
       </div>
       <h2>{question}</h2>
       <ul className="quiz-choices">
@@ -52,13 +63,15 @@ function Questions({ questions }) {
         <Button
           onClick={() => onClickNext()}
           disabled={answerIdx === null}
-          className=" text-uppercase"
+          className="text-uppercase"
           style={{
             background: "var(--primary-color)",
             color: "var(--text-primary)",
           }}
         >
-          {currentQuestion === questions.length - 1 ? "finish" : "next"}
+          {currentQuestion === selectedQuiz.questions.length - 1
+            ? "finish"
+            : "next"}
         </Button>
       </div>
     </div>

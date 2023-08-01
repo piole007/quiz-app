@@ -1,32 +1,29 @@
-import {} from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
 import Questions from "./components/questions/Questions";
 import { quizData } from "./data/questions-data";
 import "./App.css";
 import LandingPage from "./components/LandingPage";
 
 function App() {
-  function getRandomInt() {
-    return Math.floor(Math.random() * 5);
-  }
-
   return (
     <div>
-      <LandingPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage quizData={quizData} />} />
 
-      <div
-        className="d-flex justify-content-center align-items-center"
-        style={{
-          background: "var(--body-bg)",
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <Questions questions={quizData[getRandomInt()].questions} />
-      </div>
+          <Route path="/quiz/:topic" element={<QuizContainer />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
+}
+
+function QuizContainer() {
+  const { topic } = useParams();
+  return <Questions questions={quizData} topic={topic} />;
 }
 
 export default App;
