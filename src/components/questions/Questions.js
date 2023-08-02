@@ -69,9 +69,7 @@ function Questions({ questions, quizTitle }) {
       style={{ background: "var(--container-bg)" }}
     >
       {!showResult ? (<>
-        <div className="container d-flex flex-column justify-content-center align-items-center">
       <QuizProgress questionsLength={questions.length} currentQuestion={currentQuestion} quizTitle={quizTitle} />
-      </div>
       <h2>{question}</h2>
       <div className="quiz-choices">
         <ul>

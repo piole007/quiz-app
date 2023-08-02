@@ -1,7 +1,6 @@
 .container {
   align-items: center;
   justify-content: center;
-  width: 60vw;
   border-radius: 6px;
   background: var(--container-bg);
 }
