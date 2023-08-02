@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Questions.css";
+import QuizProgress from "../quizProgress/QuizProgress";
 
 const resultInitialState = {
   score: 0,
@@ -77,9 +78,7 @@ function Questions({ questions, topic }) {
     >
       {!showResult ? (
         <>
-          <div className="quiz-progress">
-            {currentQuestion + 1}/{selectedQuiz.questions.length}
-          </div>
+          <QuizProgress questionsLength={questions.length} currentQuestion={currentQuestion} quizTitle={quizTitle} />
           <h2>{question}</h2>
           <ul className="quiz-choices">
             {choices.map((answer, index) => (
