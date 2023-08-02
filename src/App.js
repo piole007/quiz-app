@@ -1,12 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import Questions from "./components/questions/Questions";
 import { quizData } from "./data/questions-data";
 import "./App.css";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   return (
@@ -24,6 +23,7 @@ function App() {
 
 function QuizContainer() {
   const { topic } = useParams();
+  console.log("Extracted Topic:", topic);
   return <Questions questions={quizData} topic={topic} />;
 }
 

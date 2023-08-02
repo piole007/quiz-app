@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
-import { quizCardData } from "../data/quiz-card-data";
-import QuizCard from "./QuizCard";
-import "../reusableComponents/Heading.css";
+import { quizCardData } from "../../data/quiz-card-data.js";
+import QuizCard from "../QuizCard/QuizCard.js";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,9 +15,9 @@ const LandingPage = () => {
   }, [searchTerm]);
 
   return (
-    <div>
+    <div className="gradient-background">
       <div className="heading-container">
-        <h1 className="display-4">Get smarter with every quiz</h1>
+        <h1>Get smarter with every quiz</h1>
       </div>
 
       <div className="container mt-5">

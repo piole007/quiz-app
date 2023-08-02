@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./QuizCard.css";
 
 const QuizCard = ({ quiz }) => {
   return (
