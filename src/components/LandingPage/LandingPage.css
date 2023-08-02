@@ -1,11 +1,25 @@
-.gradient-background {
-  background: linear-gradient(90deg, #6a5ae2 0%, #ff893b 100%);
+body {
+  background: var(--body-bg);
 }
+
 .heading-container {
   background: var(--primary-color);
   color: var(--text-primary);
-
   text-align: center;
-
   padding: 2rem;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 100%;
+  /* z-index: 100; */
+}
+.container-search {
+  /* position: fixed; */
+  top: 80px;
+  left: 0;
+  /* width: 100%; */
+  /* z-index: 100; */
+  /* height: 80px;
+  background: var(--primary-color);
+  padding: 1rem; */
 }
