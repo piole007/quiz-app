@@ -1,6 +1,6 @@
 import React from "react";
 import "./QuizProgress.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 const QuizProgress = ({ questionsLength, currentQuestion, quizTitle }) => {
   // const [time, setTime] = useState(30);

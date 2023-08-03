@@ -1,11 +1,18 @@
-.gradient-background {
-  background: linear-gradient(90deg, #6a5ae2 0%, #ff893b 100%);
+body {
+  background: var(--body-bg);
 }
+
 .heading-container {
   background: var(--primary-color);
   color: var(--text-primary);
-
   text-align: center;
-
   padding: 2rem;
+  width: 100%;
+  display: block;
+  position: sticky;
+  top: 0%;
+  z-index: 100;
+}
+.heading-container h1 {
+  margin-bottom: 2rem;
 }

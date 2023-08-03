@@ -1,4 +1,41 @@
 .card {
   background: var(--container-bg);
   color: var(--text-secondary);
+  height: 100%;
+  position: relative;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  align-items: flex-start;
+  /* justify-content: space-between; */
+  height: 100%;
+}
+
+.card-text {
+  max-height: 200px;
+}
+
+.btn-primary {
+  display: block;
+  background: var(--opacity-primary);
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.col-md-6 {
+  min-width: 300px;
 }
