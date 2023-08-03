@@ -80,10 +80,8 @@ function Questions({ questions, topic }) {
         <>
           <QuizProgress
             questionsLength={selectedQuiz.questions.length}
-            // questionsLength={questions.length}
             currentQuestion={currentQuestion}
             quizTitle={selectedQuiz.name}
-            // quizTitle={quizTitle}
           />
           <h2>{question}</h2>
           <ul className="quiz-choices">
@@ -118,7 +116,7 @@ function Questions({ questions, topic }) {
           <div className="result-card">
             <h3>Your result!</h3>
             <p>
-              Total Questions: <span> {questions.length} </span>
+              Total Questions: <span> {selectedQuiz.questions.length} </span>
             </p>
             <p>
               Total Score: <span> {result.score} </span>
