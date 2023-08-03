@@ -11,7 +11,7 @@ const resultInitialState = {
 
 function Questions({ questions, topic }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answerIdx, setAnswerIdx] = useState(Number);
+  const [answerIdx, setAnswerIdx] = useState(null);
   const [answer, setAnswer] = useState(null);
   // Update the result state
   const [result, setResult] = useState(resultInitialState);
@@ -78,7 +78,13 @@ function Questions({ questions, topic }) {
     >
       {!showResult ? (
         <>
-          <QuizProgress questionsLength={questions.length} currentQuestion={currentQuestion} quizTitle={quizTitle} />
+          <QuizProgress
+            questionsLength={selectedQuiz.questions.length}
+            // questionsLength={questions.length}
+            currentQuestion={currentQuestion}
+            quizTitle={selectedQuiz.name}
+            // quizTitle={quizTitle}
+          />
           <h2>{question}</h2>
           <ul className="quiz-choices">
             {choices.map((answer, index) => (
