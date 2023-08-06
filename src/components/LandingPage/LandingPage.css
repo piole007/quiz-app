@@ -3,7 +3,6 @@ body {
 }
 
 .heading-container {
-  background: var(--primary-color);
   color: var(--text-primary);
   text-align: center;
   padding: 2rem;
