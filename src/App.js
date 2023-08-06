@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import Questions from "./components/questions/Questions";
 import { quizData } from "./data/questions-data";
 import "./App.css";
-import LandingPage from "./components/LandingPage/LandingPage";
+import LandingPage from "./pages/landingPage/LandingPage";
 
 function App() {
   return (

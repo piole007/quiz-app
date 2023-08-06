@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { quizCardData } from "../../data/quiz-card-data.js";
-import QuizCard from "../QuizCard/QuizCard.js";
+import QuizCard from "../../components/quizCard/QuizCard.js";
 import "./LandingPage.css";
 
 const LandingPage = () => {
