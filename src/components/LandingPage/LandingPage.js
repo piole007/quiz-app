@@ -30,13 +30,12 @@ const LandingPage = () => {
       </div>
 
       <div className="container mt-5">
-        <div className="row"></div>
-        <div className="mt-4" />
-        <div className="row">
+        <div className="row centered-row pt-4">
           {filteredQuizzes.map((quiz) => (
             <QuizCard key={quiz.topic} quiz={quiz} />
           ))}
         </div>
+        <div className="container mt-5 mb-5"></div>
       </div>
     </div>
   );

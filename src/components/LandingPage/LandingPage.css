@@ -7,7 +7,7 @@ body {
   color: var(--text-primary);
   text-align: center;
   padding: 2rem;
-  width: 100%;
+  width: 100vw;
   display: block;
   position: sticky;
   top: 0%;
@@ -15,4 +15,9 @@ body {
 }
 .heading-container h1 {
   margin-bottom: 2rem;
+}
+
+.centered-row {
+  display: flex;
+  justify-content: center;
 }
