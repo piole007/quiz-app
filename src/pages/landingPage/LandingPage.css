@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.heading-container {
+  background: rgb(36, 36, 36);
+  color: var(--opacity-primary);
+  text-align: center;
+  padding-bottom: 2rem;
+  width: 98.8vw;
+  display: block;
+  position: sticky;
+  top: 0%;
+  z-index: 100;
+}
+
+.heading-container h1 {
+  margin-bottom: 2rem;
+}
+.centered-row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Toggle button styling */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  padding-top: 1rem;
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.theme-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #6a5ae2;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+
+.dark .slider {
+  border-color: #ccc;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #6a5ae2;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.dark .slider:before {
+  background-color: #ccc;
+}
+
+.theme-checkbox:checked + .slider {
+  background-color: #6a5ae2;
+}
+
+.theme-checkbox:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.sun-icon {
+  margin-right: 6px;
+}
+.moon-icon {
+  margin-left: 6px;
+}
+
+/* Light Mode Styles */
+.light-theme .body {
+  background: var(--body-bg);
+  min-height: 100vh;
+}
+
+.light-theme .heading-container {
+  background: var(--body-bg);
+  color: var(--text-primary);
+}
+
+.light-theme .toggle-switch {
+  color: var(--primary-color);
+}
+
+/* Dark Mode Styles */
+.dark-theme .dark-body {
+  background: black;
+  min-height: 100vh;
+}
+
+.dark-theme .dark-heading-container {
+  background: #0e0e0e;
+  color: var(--opacity-primary);
+}
+.dark-theme .toggle-switch {
+  color: #0e0e0e;
+}
+
+.dark-theme .form-control {
+  background-color: #aea5f4;
+  color: rgb(70, 69, 69);
+  border: none;
+  width: 100%; /* Make the input fill its container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .centered-row {
+  background: #74718f;
+}

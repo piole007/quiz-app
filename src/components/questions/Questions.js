@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Questions.css";
 import QuizProgress from "../quizProgress/QuizProgress";
-import Result from "../result/result"
+import Result from "../result/Result";
 
 const resultInitialState = {
   score: 0,
@@ -113,7 +113,11 @@ function Questions({ questions, topic }) {
           </div>
         </>
       ) : (
-        <Result result={result} onTryAgain={onTryAgain} totalQuestions ={selectedQuiz.questions.length} />
+        <Result
+          result={result}
+          onTryAgain={onTryAgain}
+          totalQuestions={selectedQuiz.questions.length}
+        />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 export const quizData = [
   {
-    topic: "CSS/HTML Code",
+    topic: "html_css",
     questions: [
       {
         question: "What does CSS stand for?",
