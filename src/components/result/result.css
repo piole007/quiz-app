@@ -1,30 +1,42 @@
-:root {
-    --body-bg: linear-gradient(90deg, #6a5ae2 0%, #ff893b 100%);
-    --container-bg: #e9e4fd;
-    --text-primary: #ffffff;
-    --primary-color: #6a5ae2;
-    --opacity-primary: #796ae3;
-    --secondary-color: #ff8fa3;
-    --opacity-secondary: #fea5b5;
-    --text-secondary: #0c0a2b;
-  }
+  @import "../../App.css";
 
   .result-container{
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: var(--body-bg);
+   min-height: 50vh;
+   min-width: 30vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
   }
 
   .result-card {
-    background: var(--container-bg);
-    height: 60vh;
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    border-radius: 6px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .result-card h3 {
+    margin-bottom: 2rem;
+  }
+  .result-card p {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  .result-card span {
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+
+  .resultButtons button {
+    display: block;
+    width: 9rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: var(--opacity-primary);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .resultButtons button:hover {
+    background: var(--primary-color);
+    color: var(--text-primary);
   }
