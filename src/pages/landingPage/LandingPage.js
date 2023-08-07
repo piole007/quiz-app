@@ -59,7 +59,7 @@ const LandingPage = () => {
         </div>
 
         {/* Search results */}
-        <div className="container mt-5">
+        <div className="container landing-container mt-5">
           <div className="row centered-row pt-4">
             {filteredQuizzes.map((quiz) => (
               <QuizCard key={quiz.topic} quiz={quiz} />

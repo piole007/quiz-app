@@ -8,6 +8,10 @@ body {
   box-sizing: border-box;
 }
 
+.landing-container {
+  width: 80%;
+}
+
 .heading-container {
   background: rgb(36, 36, 36);
   color: var(--opacity-primary);
