@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { quizCardData } from "../../data/quiz-card-data.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import QuizCard from "../../components/QuizCard/QuizCard.js";
+import QuizCard from "../../components/quizCard/QuizCard.js";
 import "./LandingPage.css";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -60,12 +60,11 @@ const LandingPage = () => {
 
         {/* Search results */}
         <div className="container mt-5">
-          <div className="row centered-row pt-4">
+          <div className="quiz-row row centered-row pt-4">
             {filteredQuizzes.map((quiz) => (
               <QuizCard key={quiz.topic} quiz={quiz} />
             ))}
           </div>
-          <div className="container mt-5 mb-5"></div>
         </div>
       </div>
     </div>
