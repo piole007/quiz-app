@@ -74,8 +74,7 @@ function Questions({ questions, topic }) {
 
   return (
     <div
-      className="container d-flex flex-column justify-content-center "
-      style={{ background: "var(--container-bg)" }}
+      className="container d-flex"
     >
       {!showResult ? (
         <>
@@ -84,7 +83,7 @@ function Questions({ questions, topic }) {
             currentQuestion={currentQuestion}
             quizTitle={selectedQuiz.name}
           />
-          <h2>{question}</h2>
+          <h2 className="quiz-question">{question}</h2>
           <ul className="quiz-choices">
             {choices.map((answer, index) => (
               <li
@@ -100,7 +99,7 @@ function Questions({ questions, topic }) {
             <Button
               onClick={() => onClickNext()}
               disabled={answerIdx === null}
-              className="text-uppercase"
+              className="text-uppercase quiz-button"
               style={{
                 background: "var(--primary-color)",
                 color: "var(--text-primary)",

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { quizCardData } from "../../data/quiz-card-data.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import QuizCard from "../../components/quizCard/QuizCard.js";
+import QuizCard from "../../components/QuizCard/QuizCard.js";
 import "./LandingPage.css";
 import { useTheme } from "../../context/ThemeContext";
 
