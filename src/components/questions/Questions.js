@@ -28,7 +28,7 @@ function Questions({ questions, topic }) {
   );
 
   if (!selectedQuiz) {
-    return <div>Quiz not found!</div>;
+    return <div>Quiz not found! </div>;
   }
 
   const { question, choices, correctAnswer } =
